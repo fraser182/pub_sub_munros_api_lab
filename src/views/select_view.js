@@ -11,6 +11,7 @@ SelectView.prototype.bindEvents = function () {
   PubSub.subscribe('Munros:munros-loaded', (event) => {
     // console.log('Munros-load: SUBSCRIBE all details all munros', event.detail);
     const nonDuplicateRegions = this.getNonDuplicateRegions(event.detail)
+    // console.log('All munros, sorted and non-duplicated ',nonDuplicateRegions);
     this.populate(nonDuplicateRegions);
     // console.log('nonDuplicateRegions', nonDuplicateRegions); // returns all regions (only)
   })
@@ -34,16 +35,15 @@ SelectView.prototype.populate = function(uniqueRegions){
 SelectView.prototype.getNonDuplicateRegions = function(munros){
   const allMunroRegions = munros.map((munro) => {
     return munro.region;
+
   });
+  // console.log('Mapped munros - showing only regions in new array',allMunroRegions);
 
   // return allMunroRegions.filter((region, index) => {
   //   return allMunroRegions.indexOf(region) === index;
   // });
   const nonDuplicateRegions = [...new Set(allMunroRegions)];
   return nonDuplicateRegions;
-
 };
-
-
 
 module.exports = SelectView;

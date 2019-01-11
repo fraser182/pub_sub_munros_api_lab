@@ -3,7 +3,7 @@ const MunroDetailView = function(){
 }
 
 MunroDetailView.prototype.createMunroDetail = function (munro) {
-  
+
   const munroDiv = document.createElement('div');
 
   const header = document.createElement('h1')
@@ -26,3 +26,4 @@ MunroDetailView.prototype.createMunroDetail = function (munro) {
 
 
 module.exports = MunroDetailView;
+;

@@ -1,5 +1,7 @@
 * {
- font-family: Roboto;
+  font-family: Roboto;
+  /* list-style-type: none; */
+  text-align: center;
 }
 
 #munro-list{
@@ -10,7 +12,12 @@
 }
 
 ul {
-    list-style-position: inside; /* to align the bullet point central with text */
+  padding:0;
+  list-style-position: inside; /* to align the bullet point central with text */
+}
+
+li {
+  list-style: none;
 }
 
 #munro-list > div {
@@ -18,14 +25,16 @@ ul {
   border-color: rgba(0, 0, 0, 0.34);
   border-radius: 10px;
   margin: 10px;
-  text-align: center;
+  /* text-align: center; */
+  justify-content: center;
   padding: 5px;
+
 }
 
 #munro-list > div:nth-child(odd) {
-background-color: rgba(13, 3, 9, 0.31);
+  background-color: rgba(13, 3, 9, 0.31);
 }
 
 #munro-list > div:nth-child(even) {
-background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
 }

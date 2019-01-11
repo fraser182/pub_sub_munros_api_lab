@@ -1,10 +1,11 @@
 const PubSub = require('../helpers/pub_sub.js');
 
-const SelectView = function(element){
-  this.element = element;
-  // console.log('this.element', this.element // html location from app.js
+const SelectView = function(menu){
+  this.menu = menu;
+  // console.log('this.menu', this.menu // html location from app.js
 
 };
+
 
 // B then C
 SelectView.prototype.bindEvents = function () {
@@ -15,7 +16,7 @@ SelectView.prototype.bindEvents = function () {
     this.populate(nonDuplicateRegions);
     // console.log('nonDuplicateRegions', nonDuplicateRegions); // returns all regions (only)
   })
-  this.element.addEventListener('change', (event) => { // changes the selected country from dropdown
+  this.menu.addEventListener('change', (event) => { // changes the selected country from dropdown
     // console.log('Return name of region selected:', event.target.value);
     const selectedRegion = event.target.value;
     // console.log('SelectView:PUBLISH eventlistener (change drop down) - country region', selectedRegion);
@@ -28,7 +29,7 @@ SelectView.prototype.populate = function(uniqueRegions){
     const option = document.createElement('option');
     option.value = region;
     option.textContent = region;
-    this.element.appendChild(option);
+    this.menu.appendChild(option);
   });
 }
 

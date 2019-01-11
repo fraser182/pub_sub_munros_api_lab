@@ -10,7 +10,7 @@ MunroListView.prototype.bindEvents = function(){
   PubSub.subscribe('Munros:all-munros-with-selected-region-found', (event) => {
     this.container.innerHTML= '';
     this.render(event.detail);
-// console.log('Munros: SUBSCRIBE - all munros with selected region', event.detail);
+// console.log('Munros: SUBSCRIBE - array of munro objects - all munros with selected region', event.detail);
   });
 }
 

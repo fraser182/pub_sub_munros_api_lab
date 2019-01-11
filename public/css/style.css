@@ -1,0 +1,31 @@
+* {
+ font-family: Roboto;
+}
+
+#munro-list{
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+ul {
+    list-style-position: inside; /* to align the bullet point central with text */
+}
+
+#munro-list > div {
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.34);
+  border-radius: 10px;
+  margin: 10px;
+  text-align: center;
+  padding: 5px;
+}
+
+#munro-list > div:nth-child(odd) {
+background-color: rgba(13, 3, 9, 0.31);
+}
+
+#munro-list > div:nth-child(even) {
+background-color: rgba(0, 0, 0, 0.1);
+}
